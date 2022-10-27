@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    {% if current_user.is_authenticated %}
+        <h1 class="text-center">Hello {{ current_user }}!</h1>
+    {% else %}
+        <h1 class="text-center">Hello, please sign up or login to use Phone Book</h1>
+    {% endif %}
+{% endblock content %}

@@ -1,24 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-    <title>signup page</title>
-</head>
-<body class="bg-secondary text-center m-lg-5">
-    <h1>SIGN UP</h1>
-    <label for="name"><strong>First Name</strong></label><br>
-    <input type="text" id="name" placeholder="Your First Name"><br>
-    <label for="name"><strong>Last Name</strong></label><br>
-    <input type="text" id="name" placeholder="Your Last Name"><br>
-    <label for="body"><strong>Phone Number</strong></label><br>
-    <textarea id="body" placeholder="Your Phone Number"></textarea><br>
-    <label for="name"><strong>Address</strong></label><br>
-    <input type="text" id="name" placeholder="Your Address"><br>
-    <button type="button" class="btn btn-primary m-lg-5"><a class="text-decoration-none link-light" href="http://127.0.0.1:5000/">Continue</a></button>
+{% extends 'base.html' %}
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+
+<form class="bg-white p-5 rounded mt-3" action="" method="POST">
+    <h1 class="text-center">Sign Up</h1>
+
+    {{ form.csrf_token }}
+
+    {{ form.first_name.label }}
+    {{ form.first_name(class='form-control', placeholder='Enter Your First Name') }}
+
+    {{ form.last_name.label }}
+    {{ form.last_name(class='form-control', placeholder='Enter Your Last Name') }}
+
+    {{ form.phone_number.label }}
+    {{ form.phone_number(class='form-control', placeholder='Enter Your Phone Number') }}
+
+    {{ form.address.label }}
+    {{ form.address(class='form-control', placeholder='Enter Your Address')}}
+
+    {{ form.submit(class='btn btn-secondary w-100 mt-3') }}
+
+</form>
+{% endblock %}
