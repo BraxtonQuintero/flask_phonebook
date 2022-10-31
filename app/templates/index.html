@@ -6,7 +6,7 @@
     {% if current_user.is_authenticated %}
         <h1 class="text-center">Hello {{ current_user }}!</h1>
     {% else %}
-        <h1 class="text-center">Hello, please sign up or login to use the blog</h1>
+        <h1 class="text-center">Hello, please sign up or login to use the phonebook</h1>
     {% endif %}
 
     {% for post in posts %}
